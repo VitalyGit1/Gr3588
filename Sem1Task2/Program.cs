@@ -14,11 +14,15 @@ if (num1Line!=null && num2Line!=null)
         //Выводим данные в консоль
         Console.Write("max = "); 
         Console.WriteLine(num2Line);
+        Console.Write("min = "); 
+        Console.WriteLine(num1Line);
     }
     else
     {
         //Выводим данные в консоль
         Console.Write("max = "); 
         Console.WriteLine(num1Line);
+        Console.Write("min = "); 
+        Console.WriteLine(num2Line);
     }
 }
