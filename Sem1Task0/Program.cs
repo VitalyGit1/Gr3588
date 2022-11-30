@@ -1,11 +1,18 @@
-﻿string? num1Line = Console.ReadLine();
-string? num2Line = Console.ReadLine();
+﻿
+//Считываем данные с консоли
+string? inputLine = Console.ReadLine();
 
-if(num1Line!=null&&num2Line!=null)
+//Проверяем, чтобы данные не были пустыми
+if(inputLine!=null)
 {
-    int num1 = int.Parse(num1Line);
-    int num2 = int.Parse(num2Line);
+    //Парсим введенное число
+    int inputNumber = int.Parse(inputLine);
 
-    int outResult = num1*num2;
-    Console.WriteLine(outResult);
+    //Находим квадрат числа
+    int outNumber = inputNumber*inputNumber;
+    //int outNumber = (int)Math.Pow(inputNumber,2);
+
+    //Выводим данные в консоль
+    Console.WriteLine(outNumber);
+    //Console.WriteLine(Math.Pow(int.Parse(inputLine),2));
 }
