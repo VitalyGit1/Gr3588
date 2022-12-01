@@ -20,8 +20,6 @@ if(inputLine!=null)
         //startNumber = startNumber+1;
         startNumber++;
     }
-    //Добавляем начальное число
-    outLine = outLine + inputNumber;
     //Условие: начальное число будет выводиться, только если оно четное 
     if (inputNumber % 2 == 0)
     {
