@@ -38,7 +38,6 @@ void printData(bool result)
     {
         Console.WriteLine("Введенное число - палиндром!");
     }
-
     else
     {
         Console.WriteLine("Введенное число - не палиндром!");
