@@ -1,17 +1,17 @@
 ﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
-int num = readData("Введите пятизначный палиндром:");
+int num = ReadData("Введите пятизначный палиндром:");
 
 if (num == 0)
 {
     return;
 }
 
-bool result = palinTest(num);
+bool result = PalinTest(num);
 
-printData(result);
+PrintData(result);
 
-int readData(string msg)
+int ReadData(string msg)
 {
     Console.WriteLine(msg);
 
@@ -25,14 +25,14 @@ int readData(string msg)
     return int.Parse(inputNumber ?? "0");
 }
 
-bool palinTest(int num)
+bool PalinTest(int num)
 {
     bool result = false;
     result = (num / 10000 == num % 10) && (num / 1000) % 10 == (num / 10) % 10;
     return result;
 }
 
-void printData(bool result)
+void PrintData(bool result)
 {
     if (result == true)
     {
