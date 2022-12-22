@@ -32,7 +32,6 @@ int CalcDiag(int[,] matrix)
     {
         res += matrix[i, i];
     }
-
     return res;
 }
 
