@@ -1,13 +1,12 @@
-﻿// Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+﻿// Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
-int row = ReadData("Enter the number of lines: ");
-int column = ReadData("Enter the number of columns: ");
-int x = ReadData("Enter the x position of the element: ");
-int y = ReadData("Enter the y position of the element: ");
-int[,] arr2D = Fill2DArray(row, column, 10, 99);
+int countRow = ReadData("Enter the number of lines: ");
+int countColumn = ReadData("Enter the number of columns: ");
+int[,] arr2D = Fill2DArray(countRow, countColumn, 10, 99);
 Print2DArray(arr2D);
-int elem = SearchElem(arr2D, x, y);
-PrintData("Element value: " + elem);
+SortedArray(arr2D);
+PrintData("Sorted array: ");
+Print2DArray(arr2D);
 
 int ReadData(string line) // Read data from user.
 {
@@ -43,21 +42,28 @@ void Print2DArray(int[,] matrix) // Print a two-dimensional array.
     }
 }
 
-int SearchElem(int[,] arr, int x, int y) // Find the value of the requested element.
+void SortedArray(int[,] array) // Sort the array.
 {
-    int elem = -1;
-    if (x < arr.GetLength(0))
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        if (y < arr.GetLength(1))
+      for (int k = 0; k < array.GetLength(1) - 1; k++)
+      {
+        if (array[i, k] < array[i, k + 1])
         {
-            elem = arr[x, y];
+          int temp = array[i, k + 1];
+          array[i, k + 1] = array[i, k];
+          array[i, k] = temp;
         }
+      }
     }
-    else Console.WriteLine("No such element!");
-    return elem;
+  }
 }
 
 void PrintData(string res) // Print data to console.
 {
     Console.WriteLine(res);
 }
+
+
